@@ -54,7 +54,13 @@
 
 .bgColor1 {
     background-color: rgba(179, 213, 217, 0.73);
+}
+.padding {
     padding: 50px 0;
+}
+
+.imgVAlign {
+    margin: auto 0;
 }
 
 .extraSpace {
