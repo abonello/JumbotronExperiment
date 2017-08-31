@@ -52,6 +52,11 @@
     margin-top: 30px;
 }
 
+.bgColor1 {
+    background-color: rgba(179, 213, 217, 0.73);
+    padding: 50px 0;
+}
+
 .extraSpace {
     height: 1000px;
 }
