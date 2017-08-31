@@ -1,18 +1,35 @@
 .jumbotron {
     background-image: url('../img/stardust.png');
     background-attachment: fixed;
-    color: #1D3146;
+    /* color: #1D3146; */
+    color: #CEFAFF;
     min-height: 500px;
     margin-bottom: 0;
 }
 
 .container {
-    background-image: url('../img/header-banner-design_31803.jpg');
-    background-size: cover;
     padding: 20px  40px 50px 40px;
     border-radius: 50px;
-    box-shadow: 5px 10px 20px ivory;
+    box-shadow: 5px 10px 20px rgba(253, 253, 182, 0.47);
     margin-bottom:100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container:before {
+    content: ' '; /* Some content is required and needs to be block*/
+    display: block;
+    background-image: url('../img/header-banner-design_31803.jpg');
+    background-size: cover;
+    width: 100%; /* stretch image to cover all and give size */
+    height: 100%;
+    position: absolute;
+    left: 0; /* position absolute to work with relative and stick to top and left */
+    top: 0;
+    /* background-position: 50% 0; */
+    z-index: 0;
+    opacity: 0.2; /* controls transparency */
+    border-radius: 50px; /* To match container */
 }
 
 .container a {
