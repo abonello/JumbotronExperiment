@@ -55,6 +55,11 @@
 .bgColor1 {
     background-color: rgba(179, 213, 217, 0.73);
 }
+.bgColor2 {
+    background-image: url('../img/dark-triangles.png');
+    background-attachment: fixed;
+    color: #CEFAFF;
+}
 .padding {
     padding: 50px 0;
 }
