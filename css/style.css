@@ -1,0 +1,11 @@
+.jumbotron {
+    background-image: url('../img/stardust.png');
+    background-attachment: fixed;
+    color: ivory;
+    min-height: 500px;
+    margin-bottom: 0;
+}
+
+.extraSpace {
+    height: 1000px;
+}
