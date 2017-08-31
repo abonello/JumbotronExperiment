@@ -1,4 +1,4 @@
-# Jumbotrone Experiment
+# Jumbotron Experiment
 
 This project is published as a [Github Page](https://abonello.github.io/JumbotronExperiment/)
 
