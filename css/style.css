@@ -1,3 +1,18 @@
+.navbar-fixed-top {
+    color: ivory;
+}
+.navbar-fixed-top a {
+    text-decoration: none;
+    color: ivory;
+}
+.navbar-brand {
+    margin-left: 50px;
+}
+.nav {
+    margin-right: 50px;
+}
+
+
 .jumbotron {
     background-image: url('../img/stardust.png');
     background-attachment: fixed;
@@ -7,7 +22,7 @@
     margin-bottom: 0;
 }
 
-.container {
+.jumbotron .container {
     padding: 20px  40px 50px 40px;
     border-radius: 50px;
     -webkit-box-shadow: 5px 10px 20px rgba(253, 253, 182, 0.47);
@@ -17,7 +32,7 @@
     overflow: hidden;
 }
 
-.container:before {
+.jumbotron .container:before {
     content: ' '; /* Some content is required and needs to be block*/
     display: block;
     background-image: url('../img/header-banner-design_31803.jpg');
@@ -33,7 +48,7 @@
     border-radius: 50px; /* To match container */
 }
 
-.container a {
+.jumbotron .container a {
     margin-top: 30px;
 }
 
