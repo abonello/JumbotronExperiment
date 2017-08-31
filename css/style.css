@@ -10,7 +10,8 @@
 .container {
     padding: 20px  40px 50px 40px;
     border-radius: 50px;
-    box-shadow: 5px 10px 20px rgba(253, 253, 182, 0.47);
+    -webkit-box-shadow: 5px 10px 20px rgba(253, 253, 182, 0.47);
+            box-shadow: 5px 10px 20px rgba(253, 253, 182, 0.47);
     margin-bottom:100px;
     position: relative;
     overflow: hidden;
