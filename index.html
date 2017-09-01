@@ -13,23 +13,23 @@
     <div class="navbar-fixed-top navbar-inverse">
         <div class="container">
             <div class="navbar-brand">
-                <a href="#">My Site</a>
+                <a class="scroll" href="#home" id="home1">My Site</a>
             </div>
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                 Menu
             </button>
             <div class="collapse navbar-collapse navHeaderCollapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="nav-item active"><a class="nav-link scroll" href="#home" id="home2">Home</a></li>
+                    <li class="nav-item"><a class="nav-link scroll" href="#activities" id="activitiesNav">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link scroll" href="#portfolio" id="portfolioNav">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link scroll" href="#contact" id="contactNav">Contact</a></li>
                 </ul>
             </div>
         </div>
     </div>    
-
-    <div class="jumbotron">
+    <!-- Jumbotron -->
+    <div class="jumbotron" id="home">
         <div class="container">
             <h1>This is my first Bootstrap Jumbotron</h1>
             <p><strong>Jumbotron with fixed image background, creating a simple parallax effect.</strong></p>
@@ -39,7 +39,8 @@
             </div>
         </div>
     </div>
-    <div class="bgColor1 padding">
+    <!-- Activities -->
+    <div class="bgColor1 padding" id="activities">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -60,8 +61,8 @@
             </div>
         </div>
     </div>
-
-    <div class="bgColor2">
+    <!-- Portfolio -->
+    <div class="bgColor2" id="portfolio">
         <div class="container">
             <div class="row padding">
                 <div class="col-md-6">
@@ -99,8 +100,8 @@
             <hr>
         </div>
     </div>
-
-    <div class="bgColor1 padding">
+    <!-- Contact Form -->
+    <div class="bgColor1 padding" id="contact">
         <div class="container">
             <form action="" role="form">
                 <div class="form-group">
@@ -131,11 +132,74 @@
             <article>
                 <a href="https://github.com/abonello/JumbotronExperiment">This project is on GitHub</a>
                 <p>This page was coded and created by Anthony Bonello, 2017.</p>
-                <a href="#">Back to top</a>
+                <a class="scroll" href="#home" id="home3">Back to top</a>
             </article>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // The notes below are for learning the functionality of this code
+            // This method is well documented both on youtube and stackflow
+            // Make array of all elements having scroll class.
+            var scrollLink = $(".scroll");
+            //console.log(scrollLink);
+
+            scrollLink.click(function(e) {
+                e.preventDefault(); //ie. do not jump to the link.
+                //console.log($(this.hash));
+                $("body,html").animate({
+                    scrollTop:$(this.hash).offset().top - 40 //Find this object's offset from the top,
+                }, 1000); // and scroll to that place in 1000ms.
+            });
+
+            // Switching Active Link
+            $(window).scroll(function() {
+                var scrollbarLocation = $(this).scrollTop();
+                scrollLink.each(function() {
+                    var sectionOffset = $(this.hash).offset().top - 40;
+                    console.log(sectionOffset);
+                    if (sectionOffset <= scrollbarLocation) {
+                        $(this).parent().addClass("active");
+                        $(this).parent().siblings().removeClass("active");
+                    }
+                })
+            })
+
+            
+            // Hard Coded version
+            // $('#home1').click(function(e) {
+            //     e.preventDefault(); //ie. do not jump to the link.
+            //     $path1 = $("#home").offset().top;
+            //     $("body,html").animate({scrollTop:$path1}, 1000);
+            // });
+            // $("#home2").click(function(e) {
+            //     e.preventDefault(); //ie. do not jump to the link.
+            //     $path2 = $("#home").offset().top;
+            //     $("body,html").animate({scrollTop:$path2}, 1000);
+            // });
+            // $("#activitiesNav").click(function(e) {
+            //     e.preventDefault(); //ie. do not jump to the link.
+            //     $path = $("#activities").offset().top;
+            //     $("body,html").animate({scrollTop:$path}, 1000);
+            // });
+            // $("#portfolioNav").click(function(e) {
+            //     e.preventDefault(); //ie. do not jump to the link.
+            //     $path = $("#portfolio").offset().top;
+            //     $("body,html").animate({scrollTop:$path}, 1000);
+            // });
+            // $("#contactNav").click(function(e) {
+            //     e.preventDefault(); //ie. do not jump to the link.
+            //     $path = $("#contact").offset().top;
+            //     $("body,html").animate({scrollTop:$path}, 1000);
+            // });
+            // $("#home3").click(function(e) {
+            //     e.preventDefault(); //ie. do not jump to the link.
+            //     $path = $("#home").offset().top;
+            //     $("body,html").animate({scrollTop:$path}, 1000);
+            // });
+        });
+    </script>
 </body>
 </html>
